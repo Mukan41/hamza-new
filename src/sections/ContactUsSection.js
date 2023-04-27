@@ -134,8 +134,8 @@ export default function ContactUsSection() {
             // stagger: 0.5,
             scrollTrigger: {
                 trigger: ".mobile-scale",
-                start: "center center",
-                end: "top top",
+                start: "center 100",
+                end: "center top",
                 markers: true,
                 scrub: true,
                 //   pin: true
