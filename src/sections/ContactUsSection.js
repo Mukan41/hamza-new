@@ -84,30 +84,31 @@ export default function ContactUsSection() {
     const ref = useRef(null);
 
     useEffect(() => {
+        // gsap.to(".mobile-scale", {
+        //     scrollTrigger: {
+        //         trigger: ".mobile-scale",
+        //         pin:true,
+        //         scrub: 1,
+        //         start: "top center",
+        //         end: "top 100",
+        //         ease: "power2",
+        //         markers: true
+        //     },
+        //     scale: 3
+        // });
         gsap.to(".mobile-scale", {
-            scrollTrigger: {
-                trigger: ".mobile-scale",
-                pin:true,
-                scrub: 1,
-                start: "top center",
-                end: "top 100",
-                ease: "power2",
-                markers: true
-            },
-            scale: 3
-        });
-        gsap.to(".mobile-scale", {
-            yPercent: -90,
+            // yPercent: -90,
+            scale:3,
             opacity: 0,
             ease: "Power3.easeOut",
             stagger: 0.5,
             scrollTrigger: {
               trigger: ".mobile-scale",
-              start: "top 100",
+              start: "top center",
               end: "top 100",
               markers: true,
               scrub: 1,
-              pin: true
+            //   pin: true
             },
           });
         
