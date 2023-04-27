@@ -49,13 +49,14 @@ color: #272759;
 text-align:center;
 `;
 const Contactform = styled.div`
+width:100%;
 background-color:black;
 // display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 padding:10px 25px;
-display:none;
+// display:none;
 `;
 const HeadingForm = styled.h2`
 color:white;
@@ -63,9 +64,11 @@ text-align:center;
 `;
 const ParagraphForm = styled.p`
 color:white;
+text-align:center;
 `;
 const Form = styled.form`
 margin-bottom:10px;
+text-align:center;
 `;
 const Select = styled.select`
 padding:7px 50px 7px 7px;
@@ -87,8 +90,8 @@ export default function ContactUsSection() {
         gsap.to(".mobile-scale", {
             scrollTrigger: {
                 trigger: ".mobile-scale",
-                pin:true,
-                scrub: 1,
+                pin: true,
+                scrub: true,
                 start: "top center",
                 end: "top 100",
                 ease: "power2",
@@ -103,26 +106,25 @@ export default function ContactUsSection() {
             // ease: "Power3.easeOut",
             stagger: 0.5,
             scrollTrigger: {
-              trigger: ".mobile-scale",
-              start: "top 100",
-              end: "top 100",
-              markers: true,
-              scrub: 1,
-            //   pin: true
+                trigger: ".mobile-scale",
+                start: "top 100",
+                end: "top 100",
+                markers: true,
+                scrub: true,
+                //   pin: true
             },
-          });
-          gsap.to(".Maindiv", {
+        });
+        gsap.to(".Maindiv", {
             scrollTrigger: {
-              trigger: ".mobile-scale",
-              start: "top center",
-              end: "top 100",
-              markers: true,
-              scrub: 1,
-            //   pin: true
+                trigger: ".mobile-scale",
+                start: "top center",
+                end: "top 100",
+                markers: true,
+                scrub: true,
+                //   pin: true
             },
             backgroundColor: 'black',
-          });
-        
+        });
     }, []);
 
 
