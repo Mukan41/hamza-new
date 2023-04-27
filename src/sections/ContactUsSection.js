@@ -98,10 +98,20 @@ export default function ContactUsSection() {
         });
         gsap.to(".mobile-scale", {
             // yPercent: -90,
-            scale:3,
+            // scale:3,
             opacity: 0,
-            ease: "Power3.easeOut",
+            // ease: "Power3.easeOut",
             stagger: 0.5,
+            scrollTrigger: {
+              trigger: ".mobile-scale",
+              start: "top 100",
+              end: "top 100",
+              markers: true,
+              scrub: 1,
+            //   pin: true
+            },
+          });
+          gsap.to(".Maindiv", {
             scrollTrigger: {
               trigger: ".mobile-scale",
               start: "top center",
@@ -110,6 +120,7 @@ export default function ContactUsSection() {
               scrub: 1,
             //   pin: true
             },
+            backgroundColor: 'black',
           });
         
     }, []);
