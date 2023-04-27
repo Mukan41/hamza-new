@@ -105,45 +105,88 @@ export default function ContactUsSection() {
     const ref = useRef(null);
 
     useEffect(() => {
-        gsap.to(".mobile-scale", {
-            scrollTrigger: {
-                trigger: ".mobile-scale",
-                pin: true,
-                scrub: true,
-                start: "top center",
-                end: "top 100",
-                ease: "power2",
-                markers: true,
-                toggleActions: "play reverse play reverse"
-            },
-            scale: 3
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 800px)", () => {
+            // desktop setup code here...
+            gsap.to(".mobile-scale", {
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    pin: true,
+                    scrub: true,
+                    start: "top center",
+                    end: "top 100",
+                    ease: "power2",
+                    markers: true,
+                    toggleActions: "play reverse play reverse"
+                },
+                scale: 3
+            });
+            gsap.to(".mobile-scale", {
+                opacity: 0,
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "center 100",
+                    end: "center 100",
+                    markers: true,
+                    scrub: true,
+                },
+            });
+            gsap.to(".Maindiv", {
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "top center",
+                    end: "center 100",
+                    markers: true,
+                    scrub: true,
+                    //   pin: true
+                },
+                backgroundColor: 'black',
+            });
         });
-        gsap.to(".mobile-scale", {
-            // yPercent: -90,
-            // scale:3,
-            opacity: 0,
-            // ease: "Power3.easeOut",
-            stagger: 0.5,
-            scrollTrigger: {
-                trigger: ".mobile-scale",
-                start: "center 100",
-                end: "center 100",
-                markers: true,
-                scrub: true,
-                //   pin: true
-            },
+
+        mm.add("(max-width: 799px)", () => {
+            // mobile setup code here...
+            gsap.to(".mobile-scale", {
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    pin: true,
+                    scrub: true,
+                    start: "top center",
+                    end: "top 100",
+                    ease: "power2",
+                    // markers: true,
+                    toggleActions: "play reverse play reverse"
+                },
+                scale: 1.5
+            });
+            gsap.to(".mobile-scale", {
+                opacity: 0,
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "center 100",
+                    end: "center 100",
+                    // markers: true,
+                    scrub: true,
+                },
+            });
+            gsap.to(".Maindiv", {
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "top center",
+                    end: "center 100",
+                    // markers: true,
+                    scrub: true,
+                    //   pin: true
+                },
+                backgroundColor: 'black',
+            });
         });
-        gsap.to(".Maindiv", {
-            scrollTrigger: {
-                trigger: ".mobile-scale",
-                start: "top center",
-                end: "center 100",
-                markers: true,
-                scrub: true,
-                //   pin: true
-            },
-            backgroundColor: 'black',
-        });
+
+        
+        
         gsap.to(".contact-form", {
             yPercent: -150,
             opacity: 1,
@@ -152,8 +195,8 @@ export default function ContactUsSection() {
             scrollTrigger: {
                 trigger: ".mobile-scale",
                 start: "center bottom",
-                end: "center center-=100",
-                markers: true,
+                end: "center center",
+                // markers: true,
                 scrub: true,
                 toggleActions: "play reverse play reverse"
                 //   pin: true
