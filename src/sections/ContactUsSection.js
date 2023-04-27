@@ -84,18 +84,18 @@ export default function ContactUsSection() {
     const ref = useRef(null);
 
     useEffect(() => {
-        // gsap.to(".mobile-scale", {
-        //     scrollTrigger: {
-        //         trigger: ".mobile-scale",
-        //         pin:true,
-        //         scrub: 1,
-        //         start: "top center",
-        //         end: "top 100",
-        //         ease: "power2",
-        //         markers: true
-        //     },
-        //     scale: 3
-        // });
+        gsap.to(".mobile-scale", {
+            scrollTrigger: {
+                trigger: ".mobile-scale",
+                pin:true,
+                scrub: 1,
+                start: "top center",
+                end: "top 100",
+                ease: "power2",
+                markers: true
+            },
+            scale: 3
+        });
         gsap.to(".mobile-scale", {
             // yPercent: -90,
             scale:3,
