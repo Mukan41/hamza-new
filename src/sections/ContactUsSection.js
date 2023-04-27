@@ -96,6 +96,21 @@ export default function ContactUsSection() {
             },
             scale: 3
         });
+        gsap.to(".mobile-scale", {
+            yPercent: -90,
+            opacity: 0,
+            ease: "Power3.easeOut",
+            stagger: 0.5,
+            scrollTrigger: {
+              trigger: ".mobile-scale",
+              start: "top 100",
+              end: "top 100",
+              markers: true,
+              scrub: 1,
+              pin: true
+            },
+          });
+        
     }, []);
 
 
