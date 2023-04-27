@@ -42,6 +42,7 @@ text-align:center;
 const Image = styled.img`
 max-width:100%;
 height:auto;
+// scale:.7;
 `;
 const Paragraph = styled.p`
 font-size: calc(11px + .5vw);
@@ -96,7 +97,8 @@ export default function ContactUsSection() {
                 start: "top center",
                 end: "top 100",
                 ease: "power2",
-                markers: true
+                markers: true,
+                toggleActions: "play reverse play reverse"
             },
             scale: 3
         });
@@ -127,17 +129,17 @@ export default function ContactUsSection() {
             backgroundColor: 'black',
         });
         gsap.to(".contact-form", {
-            yPercent: -200,
-            // scale:3,
+            yPercent: -150,
             opacity: 1,
             ease: "Power2.easeIn",
-            // stagger: 0.5,
+            stagger: 0.5,
             scrollTrigger: {
                 trigger: ".mobile-scale",
-                start: "center 100",
-                end: "center top",
+                start: "center bottom",
+                end: "center center-=100",
                 markers: true,
                 scrub: true,
+                toggleActions: "play reverse play reverse"
                 //   pin: true
             },
         });
