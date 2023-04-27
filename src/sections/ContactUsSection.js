@@ -57,6 +57,7 @@ align-items:center;
 justify-content:center;
 padding:10px 25px;
 // display:none;
+opacity:0;
 `;
 const HeadingForm = styled.h2`
 color:white;
@@ -107,8 +108,8 @@ export default function ContactUsSection() {
             stagger: 0.5,
             scrollTrigger: {
                 trigger: ".mobile-scale",
-                start: "top 100",
-                end: "top 100",
+                start: "center 100",
+                end: "center 100",
                 markers: true,
                 scrub: true,
                 //   pin: true
@@ -118,12 +119,27 @@ export default function ContactUsSection() {
             scrollTrigger: {
                 trigger: ".mobile-scale",
                 start: "top center",
-                end: "top 100",
+                end: "center 100",
                 markers: true,
                 scrub: true,
                 //   pin: true
             },
             backgroundColor: 'black',
+        });
+        gsap.to(".contact-form", {
+            yPercent: -200,
+            // scale:3,
+            opacity: 1,
+            ease: "Power2.easeIn",
+            // stagger: 0.5,
+            scrollTrigger: {
+                trigger: ".mobile-scale",
+                start: "center center",
+                end: "top top",
+                markers: true,
+                scrub: true,
+                //   pin: true
+            },
         });
     }, []);
 
@@ -139,7 +155,7 @@ export default function ContactUsSection() {
                     in today’s market</Paragraph>
             </Contentdiv>
             <Image src="./assets/images/Group 37.svg" alt="contact us" className="mobile-scale" ></Image>
-            <Contactform className='mobile-trigger'>
+            <Contactform className='contact-form'>
                 <HeadingForm>Calculate the cost of your business setup</HeadingForm>
                 <ParagraphForm>Choose your business category</ParagraphForm>
                 <Form>
