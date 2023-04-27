@@ -1,6 +1,7 @@
 // import * as React from 'react';
 import { useRef, useEffect } from 'react';
 import styled from "styled-components";
+import { FaArrowRight } from "react-icons/fa";
 
 
 import { gsap } from 'gsap';
@@ -60,28 +61,43 @@ padding:10px 25px;
 // display:none;
 opacity:0;
 `;
-const HeadingForm = styled.h2`
+const HeadingForm = styled.h1`
+font-family: 'Poppins', sans-serif;
 color:white;
 text-align:center;
+margin-top:2rem;
+margin-bottom:2rem;
 `;
 const ParagraphForm = styled.p`
+font-family: 'Poppins', sans-serif;
 color:white;
 text-align:center;
+margin-bottom:1.7rem;
 `;
 const Form = styled.form`
 margin-bottom:10px;
 text-align:center;
+display:flex;
+align-items:center;
+justify-content:center;
 `;
 const Select = styled.select`
-padding:7px 50px 7px 7px;
+font-family: 'Poppins', sans-serif;
+font-size:13px;
+padding:6px 130px 6px 10px;
 margin-right:10px;
-border-radius:5px;
+border-radius:6px;
 `;
 const Option = styled.option``;
 const SubmitButton = styled.button`
-padding: 8px 20px;
+font-family: 'Poppins', sans-serif;
+padding: 8px 30px;
 background-color:rgb(71 183 198);
-border-radius:5px;
+border-radius:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5px;
 `;
 export default function ContactUsSection() {
     gsap.registerPlugin(ScrollTrigger);
@@ -158,7 +174,7 @@ export default function ContactUsSection() {
             </Contentdiv>
             <Image src="./assets/images/Group 37.svg" alt="contact us" className="mobile-scale" ></Image>
             <Contactform className='contact-form'>
-                <HeadingForm>Calculate the cost of your business setup</HeadingForm>
+                <HeadingForm>Calculate the cost of your business setup.</HeadingForm>
                 <ParagraphForm>Choose your business category</ParagraphForm>
                 <Form>
                     <Select>
@@ -166,7 +182,7 @@ export default function ContactUsSection() {
                         <Option>1</Option>
                         <Option>2</Option>
                     </Select>
-                    <SubmitButton type="submit">CONTINUE</SubmitButton>
+                    <SubmitButton type="submit">CONTINUE <FaArrowRight /></SubmitButton>
                 </Form>
             </Contactform>
         </Maindiv>
