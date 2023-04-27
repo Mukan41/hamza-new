@@ -144,6 +144,21 @@ export default function ContactUsSection() {
                 },
                 backgroundColor: 'black',
             });
+            gsap.to(".contact-form", {
+                yPercent: -150,
+                opacity: 1,
+                ease: "Power2.easeIn",
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "center bottom",
+                    end: "center center",
+                    // markers: true,
+                    scrub: true,
+                    toggleActions: "play reverse play reverse"
+                    //   pin: true
+                },
+            });
         });
 
         mm.add("(max-width: 799px)", () => {
@@ -157,7 +172,7 @@ export default function ContactUsSection() {
                     end: "top 100",
                     ease: "power2",
                     // markers: true,
-                    toggleActions: "play reverse play reverse"
+                    // toggleActions: "play reverse play reverse"
                 },
                 scale: 1.5
             });
@@ -183,25 +198,26 @@ export default function ContactUsSection() {
                 },
                 backgroundColor: 'black',
             });
+            gsap.to(".contact-form", {
+                yPercent: -100,
+                opacity: 1,
+                ease: "Power2.easeIn",
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: ".mobile-scale",
+                    start: "center bottom",
+                    end: "center center",
+                    // markers: true,
+                    scrub: true,
+                    toggleActions: "play reverse play reverse"
+                    //   pin: true
+                },
+            });
         });
 
         
         
-        gsap.to(".contact-form", {
-            yPercent: -150,
-            opacity: 1,
-            ease: "Power2.easeIn",
-            stagger: 0.5,
-            scrollTrigger: {
-                trigger: ".mobile-scale",
-                start: "center bottom",
-                end: "center center",
-                // markers: true,
-                scrub: true,
-                toggleActions: "play reverse play reverse"
-                //   pin: true
-            },
-        });
+        
     }, []);
 
 
