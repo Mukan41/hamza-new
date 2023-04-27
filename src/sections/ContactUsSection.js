@@ -16,6 +16,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+overflow:hidden;
 `;
 const Contentdiv = styled.div`
 width:50%;
@@ -86,14 +87,14 @@ export default function ContactUsSection() {
         gsap.to(".mobile-scale", {
             scrollTrigger: {
                 trigger: ".mobile-scale",
-                paused: true,
+                pin:true,
                 scrub: 1,
                 start: "top center",
                 end: "top 100",
                 ease: "power2",
                 markers: true
             },
-            scale: 1.3
+            scale: 3
         });
     }, []);
 
